@@ -63,6 +63,7 @@ function main (options, done) {
   const tags = (options.tags && options.tags.split(',')) || matter.attributes.tags
   const publication = options.publication || matter.attributes.publication
   const canonicalUrl = options.canonicalUrl || matter.attributes.canonicalUrl || ''
+  const canonicalNote = options.canonicalNote || matter.attributes.canonicalNote || ''
   const license = checkLicense(options.license || matter.attributes.license)
 
   var content = `
@@ -79,7 +80,7 @@ function main (options, done) {
 
   if (canonicalUrl.length) {
     content += `
-*Cross-posted from [${canonicalUrl}](${canonicalUrl}).*
+>_Originally posted at [${canonicalUrl}](${canonicalUrl}).${canonicalNote?' '+canonicalNote:''}_
     `
   }
 
