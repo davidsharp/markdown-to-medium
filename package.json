@@ -18,7 +18,7 @@
   "license": "MIT",
   "dependencies": {
     "cliclopts": "^1.1.1",
-    "colors": "^1.1.2",
+    "chalk": "^2.4.1",
     "conf": "^0.11.2",
     "front-matter": "^2.1.0",
     "get-md-title": "^1.0.4",
