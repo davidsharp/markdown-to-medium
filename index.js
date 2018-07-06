@@ -6,7 +6,7 @@ const open = require('open')
 const fs = require('fs')
 const getTitle = require('get-md-title')
 
-require('colors') // I guess this is extending strings :/
+const chalk = require('chalk')
 
 module.exports = main
 
@@ -89,7 +89,7 @@ function main (options, done) {
       throw new Error(err)
     }
 
-    console.log(`Authenticated as ${user.username}`.blue)
+    console.log(chalk.blue(`Authenticated as ${user.username}`))
 
     const options = {
       userId: user.id,
@@ -102,7 +102,7 @@ function main (options, done) {
       publishStatus: 'draft'
     }
 
-    const successMsg = `Draft post "${title}" published to Medium.com`.green
+    const successMsg = chalk.green(`Draft post "${title}" published to Medium.com`)
 
     if (publication) {
       client.getPublicationsForUser({userId: user.id}, (err, publications) => {
