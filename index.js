@@ -80,7 +80,7 @@ function main (options, done) {
 
   if (canonicalUrl.length) {
     content += `
->_Originally posted at [${canonicalUrl}](${canonicalUrl}).${canonicalNote?' '+canonicalNote:''}_
+>_Originally posted at [${canonicalUrl}](${canonicalUrl}).${canonicalNote.length?' '+canonicalNote:''}_
     `
   }
 
